@@ -28,7 +28,7 @@ async def mentionall(event):
         ):
             is_admin = True
     if not is_admin:
-        return await event.respond("__Only admins can mention all!__")
+        return await event.respond("ᴄᴜᴍᴀɴ ᴀᴅᴍɪɴ ʏᴀɴɢ ʙɪsᴀ ɢᴜɴᴀɪɴ ᴍᴏᴅᴜʟᴇ ɪɴɪ ᴛᴏᴅ")
 
     if event.pattern_match.group(1) and event.is_reply:
         return await event.respond("__Give me one argument!__")
@@ -55,7 +55,7 @@ async def mentionall(event):
             break
         usrnum += 1
         usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}), "
-        if usrnum == 6:
+        if usrnum == 7:
             if mode == "text_on_cmd":
                 txt = f"{usrtxt},\n\n{msg}"
                 await client.send_message(chat_id, txt)
@@ -73,7 +73,7 @@ async def mentionall(event):
 @client.on(events.NewMessage(pattern="^/cancel$"))
 async def cancel_spam(event):
     if not event.chat_id in spam_chats:
-        return await event.respond("ᴛʜᴇʀᴇ ɪs ɴᴏ ᴘʀᴏᴄᴄᴇss ᴏɴ ɢᴏɪɴɢ..")
+        return await event.respond("ɢᴀ ᴀᴅᴀ ʏᴀɴɢ ʜᴀʀᴜs ɢᴡ ʙᴇʀʜᴇɴᴛɪɪɴ ᴛᴏᴅ..")
     is_admin = False
     try:
         partici_ = await client(GetParticipantRequest(event.chat_id, event.sender_id))
@@ -85,19 +85,20 @@ async def cancel_spam(event):
         ):
             is_admin = True
     if not is_admin:
-        return await event.respond("__ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴇxᴇᴄᴜᴛᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ!__")
+        return await event.respond("__ᴄᴜᴍᴀɴ ᴀᴅᴍɪɴ ʏᴀɴɢ ʙɪsᴀ ɢᴜɴᴀɪɴ ᴍᴏᴅᴜʟᴇ ɪɴɪ ᴛᴏᴅ__")
 
     else:
         try:
             spam_chats.remove(event.chat_id)
         except:
             pass
-        return await event.respond("sᴛᴏᴘᴘᴇᴅ ᴍᴇɴᴛɪᴏɴ.__")
+        return await event.respond("sᴛᴏᴘ ᴍᴇᴍᴀɴɢɢɪʟ ᴀɴᴀᴋ ᴀɴᴊɪɴɢ.__")
 
 
 __mod_name__ = "Tᴀɢᴀʟʟ"
 __help__ = """
 ──「  ᴏɴʟʏ ғᴏʀ ᴀᴅᴍɪɴs 」──
 
-❍ /all ᴏʀ @all '(ʀᴇᴘʟʏ ᴛᴏ ᴍᴇssᴀɢᴇ ᴏʀ ᴀᴅᴅ ᴀɴᴏᴛʜᴇʀ ᴍᴇssᴀɢᴇ) ᴛᴏ ᴍᴇɴᴛɪᴏɴ ᴀʟʟ ᴍᴇᴍʙᴇʀs ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ, ᴡɪᴛʜᴏᴜᴛ ᴇxᴄᴇᴘᴛɪᴏɴ.'
+❍ /all ' You know lah gunanya apa. '
+❍ /cancel ' you know lah harus ngapain. '
 """
