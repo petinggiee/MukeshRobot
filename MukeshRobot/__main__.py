@@ -75,12 +75,12 @@ PM_START_TEX = """
 
 
 PM_START_TEXT = """ 
-*ʜᴇʏ* {} , 🌀
-*๏ ɢᴡ {} ᴅɪsɪɴɪ ᴍᴀᴜ ɴᴏʟᴏɴɢɪɴ ᴍᴀɴᴀɢᴇ ʙᴜᴀᴛ ᴅɪ ɢᴄ sᴀᴍᴘᴀʜ ʟᴜ!* 
-ᴅɪsɪɴɪ ɢᴡ ᴊᴜɢᴀ ʙɪsᴀ ᴅɪ ᴘᴀᴋᴇ ʙᴜᴀᴛ ᴍᴀɴᴀɢᴇ + ᴍᴜsɪᴄ ᴅɪ ɢᴄ sᴀᴍᴘᴀʜ ʟᴜ ɪɴɪ ʏᴀ, ᴊᴀɴ ʟᴜᴘᴀ ɪᴊɪɴ ᴋᴇ!*
+*ʜᴇʏ* {} , 🏓
+*๏ ɪ'ᴍ {} 
 
+➻ ɢᴡ ʙᴏᴛ ʙᴜᴀᴛ ɴᴏʟᴏɴɢɪɴ ᴍᴜsɪᴄ + ᴍᴀɴᴀɢᴇ  ᴅɪ ɢʀᴏᴜᴘ ʟᴜ!.!*
 ─────────────────
-   *➻ ɢᴡ »* {}
+   *➻ ᴜsᴇʀs »* {}
    *➻ ᴄʜᴀᴛs »* {}
 ─────────────────
 """
@@ -100,7 +100,7 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text=" ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs", callback_data="Main_help"),
+        InlineKeyboardButton(text="ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs", callback_data="Main_help"),
     ],
     
 
@@ -232,8 +232,8 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             START_IMG,
-            caption="ɢᴡ ɪᴅᴜᴘ ᴋᴏᴋ ᴍᴇᴋ  !\n<b>ɢᴡ ɢᴀ ᴛɪᴅᴜʀ ᴅᴀʀɪ :</b> <code>{}</code>".format(
-                ᴜᴩᴛɪᴍᴇ
+            caption="ʙᴇʀʟɪɴ ɪᴅᴜᴘ ᴋᴏᴋ ᴍᴇᴋ  !\n<b>ɢᴡ ɢᴀ ᴛɪᴅᴜʀ ᴅᴀʀɪ​:</b> <code>{}</code>".format(
+                uptime
             ),
             parse_mode=ParseMode.HTML,
         )
@@ -319,7 +319,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="help_back"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="berlinmusic_support")]]
+                    [[InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="help_back"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="mukesh_support")]]
                 ),
             )
 
@@ -361,20 +361,15 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "mukesh_":
         uptime = get_readable_time((time.time() - StartTime))
-        query.message.edit_caption(f"*ʜᴇʏ,*🖕\n  *ᴛʜɪs ɪs {dispatcher.bot.first_name}*"
-            "\n*ᴅɪsɪɴɪ ᴍᴀᴜ ɴᴏʟᴏɴɢɪɴ ᴍᴀɴᴀɢᴇ ʙᴜᴀᴛ ᴅɪ ɢᴄ sᴀᴍᴘᴀʜ ʟᴜ.*"
-            "\n*ᴅɪsɪɴɪ ɢᴡ ᴊᴜɢᴀ ʙɪsᴀ ᴅɪ ᴘᴀᴋᴇ ʙᴜᴀᴛ ᴍᴀɴᴀɢᴇ + ᴍᴜsɪᴄ ᴅɪ ɢᴄ sᴀᴍᴘᴀʜ ʟᴜ ɪɴɪ ʏᴀ, ᴊᴀɴ ʟᴜᴘᴀ ɪᴊɪɴ ᴋᴇ!.*"
+        query.message.edit_caption(f"*ʜᴇʏ,*❣️\n  *ɪ'ᴍ {dispatcher.bot.first_name}*"
+            "\n*ɢᴡ ʙᴏᴛ ʙᴜᴀᴛ ɴᴏʟᴏɴɢɪɴ ᴍᴜsɪᴄ + ᴍᴀɴᴀɢᴇ  ᴅɪ ɢʀᴏᴜᴘ ʟᴜ!*"
             "\n\n────────────────────"
             f"\n*➻ ᴜᴩᴛɪᴍᴇ »* {uptime}"
             f"\n*➻ ᴜsᴇʀs »* {sql.num_users()}"
             f"\n*➻ ᴄʜᴀᴛs »* {sql.num_chats()}"
             "\n────────────────────"
-            "\n\n➲  ɪ ᴄᴀɴ ʀᴇꜱᴛʀɪᴄᴛ ᴜꜱᴇʀꜱ."
-            "\n➲  ɪ ʜᴀᴠᴇ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴛɪ-ꜰʟᴏᴏᴅ ꜱʏꜱᴛᴇᴍ."
-            "\n➲  ɪ ᴄᴀɴ ɢʀᴇᴇᴛ ᴜꜱᴇʀꜱ ᴡɪᴛʜ ᴄᴜꜱᴛᴏᴍɪᴢᴀʙʟᴇ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇꜱꜱᴀɢᴇꜱ ᴀɴᴅ ᴇᴠᴇɴ ꜱᴇᴛ ᴀ ɢʀᴏᴜᴘ'ꜱ ʀᴜʟᴇꜱ."
-            "\n➲  ɪ ᴄᴀɴ ᴡᴀʀɴ ᴜꜱᴇʀꜱ ᴜɴᴛɪʟ ᴛʜᴇʏ ʀᴇᴀᴄʜ ᴍᴀx ᴡᴀʀɴꜱ, ᴡɪᴛʜ ᴇᴀᴄʜ ᴘʀᴇᴅᴇꜰɪɴᴇᴅ ᴀᴄᴛɪᴏɴꜱ ꜱᴜᴄʜ ᴀꜱ ʙᴀɴ, ᴍᴜᴛᴇ, ᴋɪᴄᴋ, ᴇᴛᴄ."
-            "\n➲  ɪ ʜᴀᴠᴇ ᴀ ɴᴏᴛᴇ ᴋᴇᴇᴘɪɴɢ ꜱʏꜱᴛᴇᴍ, ʙʟᴀᴄᴋʟɪꜱᴛꜱ, ᴀɴᴅ ᴇᴠᴇɴ ᴘʀᴇᴅᴇᴛᴇʀᴍɪɴᴇᴅ ʀᴇᴘʟɪᴇꜱ ᴏɴ ᴄᴇʀᴛᴀɪɴ ᴋᴇʏᴡᴏʀᴅꜱ."
-            f"\n\n➻ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ғᴏʀ ɢᴇᴛᴛɪɴɢ ʙᴀsɪᴄ ʜᴇʟᴩ ᴀɴᴅ ɪɴғᴏ ᴀʙᴏᴜᴛ {dispatcher.bot.first_name}.",
+
+            f"\n\n➻ ᴋʟɪᴋ ᴀᴊᴀ ᴋᴀᴋ ʙᴜᴛᴛᴏɴ ɴʏᴀ ᴋᴀʟᴏ ᴍᴀᴜ ᴛᴀᴜ ᴛᴇɴᴛᴀɴɢ ᴍᴏᴅᴜʟᴇ ᴘᴇʀɪɴᴛᴀʜ ɴʏᴀ {dispatcher.bot.first_name}.",
             parse_mode=ParseMode.MARKDOWN,
             
             reply_markup=InlineKeyboardMarkup(
@@ -388,18 +383,18 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
      ],
                     [
                         InlineKeyboardButton(
-                            text="🚩sᴜᴩᴩᴏʀᴛ", callback_data="berlinmusic_support"
+                            text="🏓sᴜᴩᴩᴏʀᴛ", callback_data="mukesh_support"
                         ),
                         InlineKeyboardButton(
-                            text="ᴄᴏᴍᴍᴀɴᴅs 💁", callback_data="Main_help"
+                            text="ᴄᴏᴍᴍᴀɴᴅs", callback_data="Main_help"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="👨‍💻ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id=6851974966"
+                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id={OWNER_ID}"
                         ),
                         InlineKeyboardButton(
-                            text="🥀sᴏᴜʀᴄᴇ",
+                            text="❄sᴏᴜʀᴄᴇ",
                             callback_data="source_",
                         ),
                     ],
@@ -409,9 +404,9 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                 ]
             ),
         )
-    elif query.data == "berlinsupportmanage":
-        query.message.edit_caption("**๏ ᴋʟɪᴋ ᴀᴊᴀ ᴋᴀᴋ ʙᴜᴛᴛᴏɴ ɴʏᴀ ᴋᴀʟᴏ ᴍᴀᴜ ᴛᴀᴜ ᴛᴇɴᴛᴀɴɢ ᴍᴏᴅᴜʟᴇ ᴘᴇʀɪɴᴛᴀʜ ɴʏᴀ**"
-            f"\n\nᴋᴇᴋ ɴʏᴀ ᴀᴅᴀ ʙᴜɢ ᴅᴇʜ {dispatcher.bot.first_name} ᴀᴛᴀᴜ ʟᴜ ᴄᴏʙᴀ ʜᴜʙᴜɴɢɪ ᴋᴇ {dispatcher.bot.first_name}, ᴀᴛᴀᴜ ᴋᴇ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ.",
+    elif query.data == "mukesh_support":
+        query.message.edit_caption("**๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴩ ᴀɴᴅ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀ**"
+            f"\n\nɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ {dispatcher.bot.first_name} ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ {dispatcher.bot.first_name}, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -424,18 +419,18 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
      ],
                     [
                         InlineKeyboardButton(
-                            text="❄ sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/berlinmusic_support"
+                            text="sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/Berlinmusic_support"
                         ),
                         InlineKeyboardButton(
-                            text="ᴜᴩᴅᴀᴛᴇs 🏓", url=f"https://t.me/berlinmusic_support"
+                            text="ᴜᴩᴅᴀᴛᴇs", url=f"https://t.me/Asupan_bokepviral"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="😎 ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id=6851974966"
+                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id={OWNER_ID}"
                         ),
                         InlineKeyboardButton(
-                            text="ɢɪᴛʜᴜʙ 🍹", url=f"https://xnxx.com"
+                            text="ɢɪᴛʜᴜʙ", url=f"https://t.me/Berlinmusic_support"
                         ),
                     ],
                     [
@@ -462,16 +457,16 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=" Mᴀɴᴀɢᴇᴍᴇɴᴛ", callback_data="help_back"),
-                        InlineKeyboardButton(text="Mᴜsɪᴄ ", callback_data="Music_")
+                        InlineKeyboardButton(text="⍟ Mᴀɴᴀɢᴇᴍᴇɴᴛ ⍟", callback_data="help_back"),
+                        InlineKeyboardButton(text="⍟ Mᴜsɪᴄ ⍟", callback_data="Music_")
                     ],
                     [
-                        InlineKeyboardButton(text=" Bᴀsɪᴄ ", callback_data="basic_help"),
-                        InlineKeyboardButton(text="Exᴘᴇʀᴛ ", callback_data="expert_help")
+                        InlineKeyboardButton(text="⍟ Bᴀsɪᴄ ⍟", callback_data="basic_help"),
+                        InlineKeyboardButton(text="⍟ Exᴘᴇʀᴛ ⍟", callback_data="expert_help")
                     ],
                     [
-                        InlineKeyboardButton(text=" Aᴅᴠᴀɴᴄᴇ", callback_data="advance_help"),
-                        InlineKeyboardButton(text="Dᴏɴᴀᴛɪᴏɴ ", callback_data="donation_help") 
+                        InlineKeyboardButton(text="⍟ Aᴅᴠᴀɴᴄᴇ ⍟", callback_data="advance_help"),
+                        InlineKeyboardButton(text="⍟ Dᴏɴᴀᴛɪᴏɴ ⍟", callback_data="donation_help") 
                     ],
                     [InlineKeyboardButton(text="• Hᴏᴍᴇ •", callback_data="mukesh_back")]
                 ]
@@ -495,7 +490,7 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Main_help"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="berlinmusic_support")
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Main_help"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="mukesh_support")
                     ]
                 ]
             ),
@@ -522,7 +517,7 @@ Pɪɴɴᴇᴅ Mᴇssᴀɢᴇs
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Main_help"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="berlinmusic_support")
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Main_help"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="mukesh_support")
                     ]
                 ]
             ),
@@ -545,7 +540,7 @@ Wᴀʀɴ Mᴀɴᴀɢᴇᴍᴇɴᴛ
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Main_help"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="berlinmusic_support")
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Main_help"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="mukesh_support")
                     ]
                 ]
             ),
@@ -573,7 +568,7 @@ Wᴀʀɴ Mᴀɴᴀɢᴇᴍᴇɴᴛ
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Main_help"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="berlinmusic_support")
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Main_help"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="mukesh_support")
                     ]
                 ]
             ),
@@ -594,7 +589,7 @@ Yᴏᴜ ᴄᴀɴ ʜᴇʟᴘ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ ᴡɪᴛʜ 
         InlineKeyboardButton(text="🖥️", callback_data="Main_help"),
      ],
                     [
-                        InlineKeyboardButton(text="• Dᴏɴᴀᴛᴇ •", url="https://t.me/Berlinsupportmanage/7"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="berlinmusic_support")
+                        InlineKeyboardButton(text="• Dᴏɴᴀᴛᴇ •", url=f"https://t.me/Berlinmidnight"),InlineKeyboardButton(text="• sᴜᴘᴘᴏʀᴛ •", callback_data="mukesh_support")
                     ]
                 ]
             ),
@@ -608,23 +603,23 @@ def Source_about_callback(update: Update, context: CallbackContext):
  ᴛʜɪs ɪs {BOT_NAME},
 ᴀɴ ᴏᴩᴇɴ sᴏᴜʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.*
 
-ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʜᴇʟᴩ ᴏғ : [ᴛᴇʟᴇᴛʜᴏɴ](https://github.com/LonamiWebs/Telethon)
+ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʜᴇʟᴩ ᴏғ : [ᴛᴇʟᴇᴛʜᴏɴ](https://github.com/kansya-nt/Telethon)
 [ᴩʏʀᴏɢʀᴀᴍ](https://github.com/pyrogram/pyrogram)
 [ᴩʏᴛʜᴏɴ-ᴛᴇʟᴇɢʀᴀᴍ-ʙᴏᴛ](https://github.com/python-telegram-bot/python-telegram-bot)
 ᴀɴᴅ ᴜsɪɴɢ [sǫʟᴀʟᴄʜᴇᴍʏ](https://www.sqlalchemy.org) ᴀɴᴅ [ᴍᴏɴɢᴏ](https://cloud.mongodb.com) ᴀs ᴅᴀᴛᴀʙᴀsᴇ.
 
 
-*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://t.me/berlinmusic_support)
+*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github/kansya-nt)
 
 
-{BOT_NAME} ɪs ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ [ᴍɪᴛ ʟɪᴄᴇɴsᴇ](\x68\x74\x74\x70\x73\x3A\x2F\x2F\x67\x69\x74\x68\x75\x62\x2E\x63\x6F\x6D\x2F\x4E\x6F\x6F\x62\x2D\x4D\x75\x6B\x65\x73\x68\x2F\x4D\x75\x6B\x65\x73\x68\x52\x6F\x62\x6F\x74/blob/main/LICENSE).
-© 2023 - 2024 | [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/berlinmusic_support), ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ.
+{BOT_NAME} ɪs ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ [ᴍɪᴛ ʟɪᴄᴇɴsᴇ](https://xnxx.com).
+© 2023 - 2024 | [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/Berlinmusic_support), ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ.
 """,
             parse_mode=ParseMode.MARKDOWN,
             
             reply_markup=InlineKeyboardMarkup(
                 [[
-        InlineKeyboardButton(text="sᴏᴜʀᴄᴇ", url=f"https://xnxx.com")
+        InlineKeyboardButton(text="sᴏᴜʀᴄᴇ", url="https://t.me/berlinmidnight")
                 ],
                  [
         InlineKeyboardButton(text="🏡", callback_data="mukesh_back"),
@@ -706,7 +701,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="berlinmusic_support")
+                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="mukesh_support")
                     ]
                 ]
             ),
@@ -732,7 +727,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="berlinmusic_support")
+                        InlineKeyboardButton(text="• ʙᴀᴄᴋ •", callback_data="Music_"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="mukesh_support")
                     ]
                 ]
             ),
@@ -759,7 +754,7 @@ c ꜱᴛᴀɴᴅꜱ ꜰᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="berlinmusic_support")
+                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="mukesh_support")
                     ]
                 ]
             ),
@@ -779,7 +774,7 @@ c ꜱᴛᴀɴᴅꜱ ꜰᴏʀ ᴄʜᴀɴɴᴇʟ ᴘʟᴀʏ.
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="berlinmusic_support")
+                        InlineKeyboardButton(text=" ʙᴀᴄᴋ ", callback_data="Music_"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="mukesh_support")
                     ]
                 ]
             ),
@@ -803,7 +798,7 @@ def get_help(update: Update, context: CallbackContext):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_photo(START_IMG,
-                f"Contact me in PM to get help of {module.capitalize()}",
+                f"ᴍᴏᴅᴜʟᴇ ᴍᴀɴᴀ ᴍᴇᴋ ʏᴀɴɢ ᴍᴀᴜ ʟᴜ ᴄᴇᴋ ᴘᴇɴɢᴀᴛᴜʀᴀɴ ɴʏᴀ {module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -818,18 +813,18 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_photo(START_IMG,"»  𝗹𝘂 𝗺𝗮𝘂 𝗯𝘂𝗸𝗮 𝘀𝗲𝘁𝘁𝗶𝗻𝗴 𝗺𝗲𝗻𝘂 𝗱𝗶𝗺𝗮𝗻𝗮 𝗺𝗲𝗸?.",
+        update.effective_message.reply_photo(START_IMG,"» 𝗹𝘂 𝗺𝗮𝘂 𝗯𝘂𝗸𝗮 𝘀𝗲𝘁𝘁𝗶𝗻𝗴 𝗺𝗲𝗻𝘂 𝗱𝗶mana  𝗺𝗲𝗸?.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="👤 𝗯𝘂𝗸𝗮 𝗱𝗶 𝗽𝗿𝗶𝘃𝗮𝘁𝗲 𝗰𝗵𝗮𝘁",
+                            text=" 𝗮𝗽𝗮 𝗯𝘂𝗸𝗮 𝗱𝗶𝗽𝗿𝗶𝘃𝗮𝘁𝗲 𝗰𝗵𝗮𝘁",
                             url="https://t.me/{}?start=help".format(context.bot.username),
                         )
                     ],
                     [
                         InlineKeyboardButton(
-                            text="👥 𝗯𝘂𝗸𝗮 𝗱𝗶𝘀𝗶𝗻𝗶",
+                            text=" 𝗯𝘂𝗸𝗮 𝗱𝗶𝘀𝗶𝗻𝗶",
                             callback_data="help_back",
                         )
                     ],
@@ -850,7 +845,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="◁", callback_data="help_back"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="berlinmusic_support")]]
+                [[InlineKeyboardButton(text="◁", callback_data="help_back"),InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", callback_data="mukesh_support")]]
             ),
         )
 
@@ -867,14 +862,14 @@ def send_settings(chat_id, user_id, user=False):
             )
             dispatcher.bot.send_message(
                 user_id,
-                "ɴɪʜ ᴍᴇᴋ sᴇᴛᴛɪɴɢᴀɴ ʟᴜ:" + "\n\n" + sᴇᴋᴀʀᴀɴɢ,
+                "These are your current settings:" + "\n\n" + settings,
                 parse_mode=ParseMode.MARKDOWN,
             )
 
         else:
             dispatcher.bot.send_message(
                 user_id,
-                "ɢᴀ ᴀᴅᴀ ᴋᴇᴋ ɴʏᴀ ᴘᴇɴɢᴀᴛᴜʀᴀɴ ᴋʜᴜsᴜs ʙᴜᴀᴛ ᴘᴇɴɢɢᴜɴᴀ ʏᴀɴɢ ᴛᴇʀsᴇᴅɪᴀ :'(",
+                "Seems like there aren't any user specific settings available :'(",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -883,7 +878,7 @@ def send_settings(chat_id, user_id, user=False):
             chat_name = dispatcher.bot.getChat(chat_id).title
             dispatcher.bot.send_message(
                 user_id,
-                text="ᴍᴏᴅᴜʟᴇ ᴍᴀɴᴀ ᴍᴇᴋ ʏᴀɴɢ ᴍᴀᴜ ʟᴜ ᴄᴇᴋ {}'s ᴘᴇɴɢᴀᴛᴜʀᴀɴ ɴʏᴀ?".format(
+                text="Which module would you like to check {}'s settings for?".format(
                     chat_name
                 ),
                 reply_markup=InlineKeyboardMarkup(
@@ -1003,7 +998,7 @@ def get_settings(update: Update, context: CallbackContext):
                 ),
             )
         else:
-            text = "ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴇᴛᴛɪɴɢs"
+            text = "ᴋʟɪᴋ ᴅɪsɪɴɪ ᴋᴀʟᴏ ʟᴜ ᴍᴀᴜ ᴄᴇᴋ sᴇᴛᴛɪɴɢᴀɴ ʟᴜ"
 
     else:
         send_settings(chat.id, user.id, True)
@@ -1013,7 +1008,7 @@ def donate(update: Update, context: CallbackContext):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
     bot = context.bot
-    if chat.type == "private":
+    if chat.type == "ᴘʀɪᴠᴀᴛᴇ":
         update.effective_message.reply_text(
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
@@ -1021,7 +1016,7 @@ def donate(update: Update, context: CallbackContext):
         if OWNER_ID != 5935608297:
             update.effective_message.reply_text(
                 f"» ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴩᴇʀ ᴏғ {dispatcher.bot.first_name} sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs [ɢɪᴛʜᴜʙ](https://github.com)"
-                f"\n\nʙᴜᴛ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴅᴏɴᴀᴛᴇ ᴛᴏ ᴛʜᴇ ᴩᴇʀsᴏɴ ᴄᴜʀʀᴇɴᴛʟʏ ʀᴜɴɴɪɴɢ ᴍᴇ : [ʜᴇʀᴇ]({DONATE_STRING})",
+                f"\n\nʟᴜ ʙɪsᴀ ʟᴀɴɢsᴜɴɢ ᴘᴄ ᴋᴇ ɢᴡ ʏᴀ ᴋᴀʟᴏ ᴍᴀᴜ ᴅᴏɴᴀᴛᴇ ᴜᴀɴʜ ʟᴇʙɪʜ ʟᴜ ᴡᴋᴡᴋ : [ʙᴇʀʟɪɴ](https://t.me/Berlinmidnight)",
                 parse_mode=ParseMode.MARKDOWN,
                 
             )
@@ -1040,7 +1035,7 @@ def donate(update: Update, context: CallbackContext):
             )
         except Unauthorized:
             update.effective_message.reply_text(
-                "ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ɪɴ ᴘᴍ ғɪʀsᴛ ᴛᴏ ɢᴇᴛ ᴅᴏɴᴀᴛɪᴏɴ ɪɴғᴏʀᴍᴀᴛɪᴏɴ."
+                "ᴋᴀʟᴏ ᴍᴀᴜ ᴅᴏɴᴀsɪ ᴘᴄᴘᴄ ᴀᴊᴇ ʙʀᴇᴡ ᴋᴇ."
             )
 
 
@@ -1078,8 +1073,8 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                f"@{SUPPORT_CHAT}",
-                photo=f"{START_IMG}",
+                f"@berlinmusic_support",
+                photo=f"https://graph.org/file/822c62595ccfde4acdc83.jpg",
                 caption=f"""
 ✨ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.
 ━━━━━━━━━━━━━
@@ -1094,7 +1089,7 @@ def main():
             )
         except Unauthorized:
             LOGGER.warning(
-                f"Bot isn't able to send message to @Berlinsupportmanage, go and check!"
+                f"Bot isn't able to send message to @{SUPPORT_CHAT}, go and check!"
             )
         except BadRequest as e:
             LOGGER.warning(e.message)
