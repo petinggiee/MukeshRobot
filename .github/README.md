@@ -104,11 +104,11 @@ __help__ = "Module help message"
 async def some_function(_, message):
     await message.reply_text("ɪ'ᴍ.ᴀʟɪᴠᴇ ʙᴀʙʏ❣️!!")
 
-# ᴍᴀɴʏ ᴜsᴇғᴜʟ ғᴜɴᴄᴛɪᴏɴs ᴀʀᴇ ɪɴ, MukeshRobot/utils/,MukeshRobot, and MukeshRobot/modules/
+# ᴍᴀɴʏ ᴜsᴇғᴜʟ ғᴜɴᴄᴛɪᴏɴs ᴀʀᴇ ɪɴ, Berlinrobot/utils/,Berlinrobot, and Berlinrobot/modules/
 ```
 
 <h3 align="center"> 
- ᴀɴᴅ ᴘᴜᴛ ᴛʜɪs ғɪʟᴇ ɪɴ MukeshRobot/modules/, ʀᴇsᴛᴀʀᴛ ᴀɴᴅ ᴛᴇsᴛ ʏᴏᴜʀ ʙᴏᴛ.
+ ᴀɴᴅ ᴘᴜᴛ ᴛʜɪs ғɪʟᴇ ɪɴ Berlinrobot/modules/, ʀᴇsᴛᴀʀᴛ ᴀɴᴅ ᴛᴇsᴛ ʏᴏᴜʀ ʙᴏᴛ.
 </h3>
 
 ━━━━━━━━━━━━━━━━━━━━
