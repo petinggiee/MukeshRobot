@@ -405,8 +405,8 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data == "mukesh_support":
-        query.message.edit_caption("**๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴩ ᴀɴᴅ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀ**"
-            f"\n\nɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ {dispatcher.bot.first_name} ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ {dispatcher.bot.first_name}, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.",
+        query.message.edit_caption("**๏ ᴋʟɪᴋ ᴀᴊᴀ ᴋᴀᴋ ʙᴜᴛᴛᴏɴ ɴʏᴀ ᴋᴀʟᴏ ᴍᴀᴜ ᴛᴀᴜ ᴛᴇɴᴛᴀɴɢ ᴍᴏᴅᴜʟᴇ ᴘᴇʀɪɴᴛᴀʜ ɴʏᴀ**"
+            f"\n\nᴋᴇᴋ ɴʏᴀ ᴀᴅᴀ ʙᴜɢ ᴅᴇʜ {dispatcher.bot.first_name} ᴀᴛᴀᴜ ʟᴜ ᴄᴏʙᴀ ʜᴜʙᴜɴɢɪ ᴋᴇ {dispatcher.bot.first_name}, ᴀᴛᴀᴜ ᴋᴇ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -548,11 +548,13 @@ Wᴀʀɴ Mᴀɴᴀɢᴇᴍᴇɴᴛ
     elif query.data=="expert_help":
         query.message.edit_caption(f"""━━━━━━━━━━━━━━━━━━━━
 ʙᴏᴛ ɪɴɪ ᴜᴅᴀʜ ʙɪsᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴋᴀᴋ :
-🎉 ᴄᴏɴɢʀᴀɢᴜʟᴀᴛɪᴏɴꜱ 🎉
+
 [{BOT_NAME}]("https://t.me/{BOT_USERNAME}") ʙɪsᴀ ᴜɴᴛᴜᴋ ʟᴜ ᴘᴀᴅᴀ ʏᴀɴɢ ᴘᴜsɪɴɢ ᴅᴇɴɢᴀɴ ɢᴄᴀsᴛ'ᴀɴ 
 ʙᴏᴛ ɪɴɪ ɢᴡ ʙᴜᴀᴛ sᴇ sɪɴɢᴋᴀᴛ ᴍᴜɴɢᴋɪɴ ʙᴜᴀᴛ ᴍᴀɴᴀɢᴇ ɢʀᴏᴜᴘ ʟᴜ.
+━━━━━━━━━━━━━━━━━━━━
 ᴍᴏᴅᴇ ᴀᴅᴍɪɴ :
 ɪɴɪ ʙᴏᴛ ʙɪsᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴍᴏᴅᴜʟᴇɴʏᴀ ᴀᴛᴀs ᴅᴀsᴀʀ ᴘᴇʀɪɴᴛᴀʜ ᴀᴅᴍɪɴ ɢʀᴏᴜᴘs, ʙᴏᴛ ʙɪsᴀ ᴜɴᴛᴜᴋ ʙʟᴀᴄᴋʟɪsᴛ, ᴡᴇʟᴄᴏᴍᴇ, ᴍᴜsɪᴄ ᴅʟʟ ᴅᴀʜ.
+━━━━━━━━━━━━━━━━━━━━
 ɴᴏᴛᴇs :
 ᴜsᴀʜᴀɪɴ ʜᴀᴋ ʙᴀɴ ᴜsᴇʀ ᴊᴀɴɢᴀɴ ʟᴜ ᴄᴇᴋʟɪs ʙᴀɴɢ ᴜɴᴛᴜᴋ ᴍᴇɴɢʜɪɴᴅᴀʀɪ ᴅᴀʀɪ ᴛᴀɴɢᴀɴ ɴᴀᴋᴀʟ ᴀᴅᴍɪɴ ʏᴀɴɢ sᴜᴋᴀ ᴛʏᴘɪɴɢ ᴀᴛᴀᴜ ʜᴀɴᴄᴜʀɪɴ ɢᴄ ʟᴜ ᴅᴇɴɢᴀɴ ᴋᴇᴛɪᴋ /ʙᴀɴᴀʟʟ.""",parse_mode=ParseMode.MARKDOWN,
             
