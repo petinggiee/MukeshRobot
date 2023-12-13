@@ -70,7 +70,7 @@ Press `Ctrl+C` when you're done with editing config and `:wq` to save the config
 - Install tmux to keep running your bot when you close the terminal by :
 `sudo apt install tmux && tmux`
 - Finally run the bot by :
-`python3 -m MukeshRobot`
+`python3 -m Berlinms`
 - For getting out from tmux session
 
 Press `Ctrl+b` and then `d`
@@ -90,7 +90,7 @@ Press `Ctrl+b` and then `d`
 ```py
 #ᴀᴅᴅ ʟɪᴄᴇɴsᴇ ᴛᴇxᴛ ʜᴇʀᴇ ɢᴇᴛ ɪᴛ ғʀᴏᴍ ʙᴇʟᴏᴡ.
 
-from MukeshRobot import pbot as mukesh # This is bot's client
+from Berlinrobot import pbot as Berlin # This is bot's client
 from pyrogram import filters # pyrogram filters
 
 
