@@ -97,7 +97,7 @@ def add_blacklist(update, context):
         if len(to_blacklist) == 1:
             send_message(
                 update.effective_message,
-                "𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗴𝘄 𝘁𝗮𝗺𝗯𝗮𝗵𝗶𝗻 𝗺𝗲𝗸<code>{}</code> 𝗸𝗲 𝗰𝗵𝗮𝘁: <b>{}</b>!".format(
+                "𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗴𝘄 𝘁𝗮𝗺𝗯𝗮𝗵𝗶𝗻 𝗺𝗲𝗸 <code>{}</code> 𝗸𝗲 𝗰𝗵𝗮𝘁: <b>{}</b>!".format(
                     html.escape(to_blacklist[0]), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -166,7 +166,7 @@ def unblacklist(update, context):
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                "𝗱𝗶𝗵𝗮𝗽𝘂𝘀 <code>{}</code> 𝗱𝗮𝗿𝗶 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗱𝗶 <b>{}</b>!".format(
                     successful, html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
