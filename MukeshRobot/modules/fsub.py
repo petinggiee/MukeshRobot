@@ -10,9 +10,9 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from YinsRobot import DRAGONS as SUDO_USERS
-from YinsRobot import pbot
-from YinsRobot.modules.sql import forceSubscribe_sql as sql
+from MukeshRobot import DRAGONS as SUDO_USERS
+from MukeshRobot import pbot
+from MukeshRobot.modules.sql import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)
 
