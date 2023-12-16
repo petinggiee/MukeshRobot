@@ -20,10 +20,10 @@ PHOTO = [
 Mukesh = [
     [
         InlineKeyboardButton(text="๏ ᴅᴇᴠ ๏", user_id=6851974966),
-        InlineKeyboardButton(text="๏ ꜱᴜᴘᴘᴏʀᴛ ๏", url=f"https://t.me/virtualmidnight"),
+        InlineKeyboardButton(text="๏ ꜱᴜᴘᴘᴏʀᴛ ๏", url=f"https://t.me/Asupan_bokephot"),
     ],
     [
-        InlineKeyboardButton(text="๏ ғᴏᴜɴᴅᴇʀ ๏", user_id=6851974966),
+        InlineKeyboardButton(text="๏ ғᴏᴜɴᴅᴇʀ ๏", url="https://t.me/+rZdBKCGw2Hk0MGI1"),
         InlineKeyboardButton(text="๏ ᴀsᴜᴘᴀɴ ๏", url=f"https://t.me/Asupan_bokepviral"),
     ],
     [                         
