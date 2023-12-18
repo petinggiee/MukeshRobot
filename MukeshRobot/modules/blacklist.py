@@ -106,7 +106,7 @@ def add_blacklist(update, context):
         else:
             reply_text(
                 update.effective_message,
-                "Added blacklist trigger: <code>{}</code> in <b>{}</b>!".format(ext
+                "Added blacklist trigger: <code>{}</code> in <b>{}</b>!".format(
                     len(to_blacklist), html.escape(reply_text)
                 ),
                 parse_mode=ParseMode.HTML,
