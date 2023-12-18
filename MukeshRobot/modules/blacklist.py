@@ -104,7 +104,7 @@ def add_blacklist(update, context):
             )
 
         else:
-            send_message(
+            reply_text(
                 update.effective_message,
                 "Added blacklist trigger: <code>{}</code> in <b>{}</b>!".format(
                     len(to_blacklist), html.escape(chat_name)
@@ -213,7 +213,7 @@ def blacklist_mode(update, context):
         if update.effective_message.chat.type == "private":
             send_message(
                 update.effective_message,
-                "𝗽𝗮𝗸𝗲 𝗴𝗰 𝗯𝗲𝗴𝗼 𝗺𝗼𝗱𝘂𝗹𝗲𝗻𝘆𝗮, 𝗯𝘂𝗸𝗮𝗻 𝗱𝗶 𝗽𝗰",
+                "𝗽𝗮𝗸𝗲 𝗱𝗶 𝗴𝗰 𝗯𝗲𝗴𝗼 𝗺𝗼𝗱𝘂𝗹𝗲𝗻𝘆𝗮, 𝗯𝘂𝗸𝗮𝗻 𝗱𝗶 𝗽𝗰",
             )
             return ""
         chat = update.effective_chat
