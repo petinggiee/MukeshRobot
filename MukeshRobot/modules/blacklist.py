@@ -34,12 +34,12 @@ def blacklist(update, context):
         chat_id = conn
         chat_name = dispatcher.bot.getChat(conn).title
     else:
-        if chat.type == "𝗽𝗿𝗶𝘃𝗮𝘁𝗲":
+        if chat.type == "private":
             return
         chat_id = update.effective_chat.id
         chat_name = chat.title
 
-    filter_list = "𝗶𝗻𝗶 𝗺𝗲𝗸 𝗱𝗮𝗳𝘁𝗮𝗿 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗻𝘆𝗮 𝘀𝗮𝗮𝘁 𝗶𝗻𝗶 <b>{}</b>:\n".format(chat_name)
+    filter_list = "Current blacklisted words in <b>{}</b>:\n".format(chat_name)
 
     all_blacklisted = sql.get_chat_blacklist(chat_id)
 
@@ -55,12 +55,12 @@ def blacklist(update, context):
 
     split_text = split_message(filter_list)
     for text in split_text:
-        if filter_list == "𝗶𝗻𝗶 𝗺𝗲𝗸 𝗱𝗮𝗳𝘁𝗮𝗿 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗻𝘆𝗮 𝘀𝗮𝗮𝘁 𝗶𝗻𝗶<b>{}</b>:\n".format(
+        if filter_list == "ɴɪʜ ᴍᴇᴋ ᴅᴀғᴛᴀʀ ʙʟ sᴇᴋᴀʀᴀɴɢ <b>{}</b>:\n".format(
             html.escape(chat_name)
         ):
             send_message(
                 update.effective_message,
-                "𝗴𝗮𝗸 𝗮𝗱𝗮 𝗱𝗮𝗳𝘁𝗮𝗿 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗺𝗲𝗸<b>{}</b>!".format(html.escape(chat_name)),
+                "ɢᴀ ᴀᴅᴀ ᴅᴀғᴛᴀʀ ʙʟ ɴʏᴀ ᴍᴇᴋ <b>{}</b>!".format(html.escape(chat_name)),
                 parse_mode=ParseMode.HTML,
             )
             return
@@ -92,12 +92,12 @@ def add_blacklist(update, context):
             {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
         )
         for trigger in to_blacklist:
-                sql.add_to_blacklist(chat_id, trigger.split())
+            sql.add_to_blacklist(chat_id, trigger.lower())
 
         if len(to_blacklist) == 1:
             send_message(
                 update.effective_message,
-                "ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ʙʟᴀᴄᴋʟɪsᴛ <code>{}</code> ᴅɪ ɢʀᴏᴜᴘs : <b>{}</b>!".format(
+                "ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ʙʟᴀᴄᴋʟɪsᴛ <code>{}</code> ᴅɪ ɢʀᴏᴜᴘs: <b>{}</b>!".format(
                     html.escape(to_blacklist[0]), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -106,7 +106,7 @@ def add_blacklist(update, context):
         else:
             send_message(
                 update.effective_message,
-                "ᴀᴅᴅᴇᴅ ʙʟᴀᴄᴋʟɪsᴛ ᴛʀɪɢɢᴇʀ: <code>{}</code> in <b>{}</b>!".format(
+                "ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ʙʟᴀᴄᴋʟɪsᴛ: <code>{}</code> in <b>{}</b>!".format(
                     len(to_blacklist), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -115,9 +115,9 @@ def add_blacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "ᴋᴀsɪʜ ᴋᴀᴛᴀ ᴋᴀᴛᴀ ɴʏᴀ ᴅᴏɴɢ ᴋᴇɴᴛᴏᴅ ᴍᴀɴᴀ ʏᴀɴɢ ᴍᴀᴜ ᴅɪ ʙʟᴀᴄᴋʟɪsᴛ"
-	)
- 
+            "ᴋᴀsɪʜ ᴋᴀᴛᴀ ᴋᴀᴛᴀ ɴʏᴀ ᴅᴏɴɢ ᴋᴇɴᴛᴏᴅ ᴍᴀɴᴀ ʏᴀɴɢ ᴍᴀᴜ ᴅɪ ʙʟᴀᴄᴋʟɪsᴛ.",
+        )
+
 
 @user_admin
 @typing_action
@@ -153,7 +153,7 @@ def unblacklist(update, context):
             if successful:
                 send_message(
                     update.effective_message,
-                    "𝗱𝗶𝗵𝗮𝗽𝘂𝘀 <code>{}</code> 𝗱𝗮𝗿𝗶 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗱𝗶 <b>{}</b>!".format(
+                    "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
                         html.escape(to_unblacklist[0]), html.escape(chat_name)
                     ),
                     parse_mode=ParseMode.HTML,
@@ -166,7 +166,7 @@ def unblacklist(update, context):
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "𝗱𝗶𝗵𝗮𝗽𝘂𝘀 <code>{}</code> 𝗱𝗮𝗿𝗶 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁 𝗱𝗶 <b>{}</b>!".format(
+                "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
                     successful, html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -182,7 +182,7 @@ def unblacklist(update, context):
         else:
             send_message(
                 update.effective_message,
-                "𝗱𝗶𝗵𝗮𝗽𝘂𝘀 <code>{}</code> 𝗱𝗮𝗿𝗶 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁. {} did not exist, "
+                "Removed <code>{}</code> from blacklist. {} did not exist, "
                 "so were not removed.".format(
                     successful, len(to_unblacklist) - successful
                 ),
@@ -191,7 +191,7 @@ def unblacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "ᴋᴀsɪʜ ᴋᴀᴛᴀ ᴋᴀᴛᴀ ɴʏᴀ ᴅᴏɴɢ ᴋᴇɴᴛᴏᴅ ᴍᴀɴᴀ ʏᴀɴɢ ᴍᴀᴜ ᴅɪ ʜᴀᴘᴜs ʙʟᴀᴄᴋʟɪsᴛ!",
+            "Tell me which words you would like to remove from blacklist!",
         )
 
 
@@ -213,7 +213,7 @@ def blacklist_mode(update, context):
         if update.effective_message.chat.type == "private":
             send_message(
                 update.effective_message,
-                "𝗽𝗮𝗸𝗲 𝗱𝗶 𝗴𝗰 𝗯𝗲𝗴𝗼 𝗺𝗼𝗱𝘂𝗹𝗲𝗻𝘆𝗮, 𝗯𝘂𝗸𝗮𝗻 𝗱𝗶 𝗽𝗰",
+                "This command can be only used in group not in PM",
             )
             return ""
         chat = update.effective_chat
@@ -455,16 +455,16 @@ Bʟᴀᴄᴋʟɪsᴛs ᴀʀᴇ ᴜsᴇᴅ ᴛᴏ sᴛᴏᴘ ᴄᴇʀᴛᴀɪɴ �
  ❍ /blacklist*:* Vɪᴇᴡ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs.
 
 Aᴅᴍɪɴ Oɴʟʏ:
- ❍ /bl <triggers>*:* ᴀᴅᴅ ᴀ ᴛʀɪɢɢᴇʀ ᴛᴏ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛ. ᴇᴀᴄʜ ʟɪɴᴇ ɪs ᴄᴏɴsɪᴅᴇʀᴇᴅ ᴏɴᴇ ᴛʀɪɢɢᴇʀ, sᴏ ᴜsɪɴɢ ᴅɪғғᴇʀᴇɴᴛ ʟɪɴᴇs ᴡɪʟʟ ᴀʟʟᴏᴡ ʏᴏᴜ ᴛᴏ ᴀᴅᴅ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs.
- ❍ /un <triggers>*:* ʀᴇᴍᴏᴠᴇ ᴛʀɪɢɢᴇʀs ғʀᴏᴍ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛ. sᴀᴍᴇ ɴᴇᴡʟɪɴᴇ ʟᴏɢɪᴄ ᴀᴘᴘʟɪᴇs ʜᴇʀᴇ, sᴏ ʏᴏᴜ ᴄᴀɴ ʀᴇᴍᴏᴠᴇ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs ᴀᴛ ᴏɴᴄᴇ.
+ ❍ /bl or /addbl <triggers>*:* ᴀᴅᴅ ᴀ ᴛʀɪɢɢᴇʀ ᴛᴏ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛ. ᴇᴀᴄʜ ʟɪɴᴇ ɪs ᴄᴏɴsɪᴅᴇʀᴇᴅ ᴏɴᴇ ᴛʀɪɢɢᴇʀ, sᴏ ᴜsɪɴɢ ᴅɪғғᴇʀᴇɴᴛ ʟɪɴᴇs ᴡɪʟʟ ᴀʟʟᴏᴡ ʏᴏᴜ ᴛᴏ ᴀᴅᴅ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs.
+ ❍ /un or /unbl <triggers>*:* ʀᴇᴍᴏᴠᴇ ᴛʀɪɢɢᴇʀs ғʀᴏᴍ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛ. sᴀᴍᴇ ɴᴇᴡʟɪɴᴇ ʟᴏɢɪᴄ ᴀᴘᴘʟɪᴇs ʜᴇʀᴇ, sᴏ ʏᴏᴜ ᴄᴀɴ ʀᴇᴍᴏᴠᴇ ᴍᴜʟᴛɪᴘʟᴇ ᴛʀɪɢɢᴇʀs ᴀᴛ ᴏɴᴄᴇ.
  ❍ /blacklistmode <off/del/warn/ban/kick/mute/tban/tmute>*:* ᴀᴄᴛɪᴏɴ ᴛᴏ ᴘᴇʀғᴏʀᴍ ᴡʜᴇɴ sᴏᴍᴇᴏɴᴇ sᴇɴᴅs ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs.
 """
 
 BLACKLIST_HANDLER = DisableAbleCommandHandler(
     "blacklist", blacklist, pass_args=True, admin_ok=True, run_async=True
 )
-ADD_BLACKLIST_HANDLER = CommandHandler("bl", add_blacklist, run_async=True)
-UNBLACKLIST_HANDLER = CommandHandler("un", unblacklist, run_async=True)
+ADD_BLACKLIST_HANDLER = CommandHandler("bl", addbl, run_async=True)
+UNBLACKLIST_HANDLER = CommandHandler("un", unbl, run_async=True)
 BLACKLISTMODE_HANDLER = CommandHandler(
     "blacklistmode", blacklist_mode, pass_args=True, run_async=True
 )
