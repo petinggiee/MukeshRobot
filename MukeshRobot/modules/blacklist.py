@@ -94,7 +94,7 @@ def add_blacklist(update, context):
         for trigger in to_blacklist:
             sql.add_to_blacklist(chat_id, trigger.lower())
 
-        if len(to_blacto_blacklistklist) == 1:
+        if len(to_blacklistklist) == 1:
             send_message(
                 update.effective_message,
                 "ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ʙʟᴀᴄᴋʟɪsᴛ <code>{}</code> ᴅɪ ɢʀᴏᴜᴘs : <b>{}</b>!".format(
