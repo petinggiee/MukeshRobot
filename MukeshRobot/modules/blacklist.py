@@ -39,7 +39,7 @@ def blacklist(update, context):
         chat_id = update.effective_chat.id
         chat_name = chat.title
 
-    filter_list = "Current blacklisted words in <b>{}</b>:\n".format(chat_name)
+    filter_list = "ɴɪʜ ᴍᴇᴋ ᴅᴀғᴛᴀʀ ʙʟ sᴇᴋᴀʀᴀɴɢ <b>{}</b>:\n".format(chat_name)
 
     all_blacklisted = sql.get_chat_blacklist(chat_id)
 
@@ -153,7 +153,7 @@ def unblacklist(update, context):
             if successful:
                 send_message(
                     update.effective_message,
-                    "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                    "ᴍᴇɴɢʜᴀᴘᴜs <code>{}</code> ᴅᴀʀɪ ᴅᴀғᴛᴀʀ ʙʟ ᴅɪ <b>{}</b>!".format(
                         html.escape(to_unblacklist[0]), html.escape(chat_name)
                     ),
                     parse_mode=ParseMode.HTML,
@@ -166,7 +166,7 @@ def unblacklist(update, context):
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                "ᴍᴇɴɢʜᴀᴘᴜs <code>{}</code> ᴅᴀʀɪ ᴅᴀғᴛᴀʀ ʙʟ ᴅɪ <b>{}</b>!".format(
                     successful, html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -182,7 +182,7 @@ def unblacklist(update, context):
         else:
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist. {} did not exist, "
+                "ᴍᴇɴɢʜᴀᴘᴜs <code>{}</code> ᴅᴀʀɪ ᴅᴀғᴛᴀʀ ʙʟ. {} did not exist, "
                 "so were not removed.".format(
                     successful, len(to_unblacklist) - successful
                 ),
@@ -191,7 +191,7 @@ def unblacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "Tell me which words you would like to remove from blacklist!",
+            "ᴋᴀsɪʜ ᴋᴀᴛᴀ ᴋᴀᴛᴀ ɴʏᴀ ᴅᴏɴɢ ᴋᴇɴᴛᴏᴅ ᴍᴀɴᴀ ʏᴀɴɢ ᴍᴀᴜ ᴅɪʜᴀᴘᴜs ʙʟᴀᴄᴋʟɪsᴛ!",
         )
 
 
@@ -213,7 +213,7 @@ def blacklist_mode(update, context):
         if update.effective_message.chat.type == "private":
             send_message(
                 update.effective_message,
-                "This command can be only used in group not in PM",
+                "ᴘᴇʀɪɴᴛᴀʜ ɪɴɪ ᴄᴜᴍᴀɴ ʙɪsᴀ ᴅɪ ɢʀᴏᴜᴘs ʙᴜᴋᴀɴ ᴅɪ ᴘᴄ ᴍᴇᴋ",
             )
             return ""
         chat = update.effective_chat
@@ -225,7 +225,7 @@ def blacklist_mode(update, context):
             settypeblacklist = "do nothing"
             sql.set_blacklist_strength(chat_id, 0, "0")
         elif args[0].lower() in ["del", "delete"]:
-            settypeblacklist = "delete blacklisted message"
+            settypeblacklist = "ᴍᴇɴɢʜᴀᴘᴜs ʙʟ "
             sql.set_blacklist_strength(chat_id, 1, "0")
         elif args[0].lower() == "warn":
             settypeblacklist = "warn the sender"
@@ -422,11 +422,11 @@ def del_blacklist(update, context):
             break
 
 
-def __import_data__(chat_id, data):
+def __import_data__(reply_text, data):
     # set chat blacklist
     blacklist = data.get("blacklist", {})
     for trigger in blacklist:
-        sql.add_to_blacklist(chat_id, trigger)
+        sql.add_to_blacklist(reply_text, trigger)
 
 
 def __migrate__(old_chat_id, new_chat_id):
