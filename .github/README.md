@@ -102,7 +102,7 @@ __help__ = "Module help message"
 
 @mukesh.on_message(filters.command("start"))
 async def some_function(_, message):
-    await message.reply_text("ɪ'ᴍ.ᴀʟɪᴠᴇ ʙᴀʙʏ❣️!!")
+    await message.reply_text("ʙᴇʀʟɪɴ ᴀʟɪᴠᴇ ʙᴀʙʏ❣️!!")
 
 # ᴍᴀɴʏ ᴜsᴇғᴜʟ ғᴜɴᴄᴛɪᴏɴs ᴀʀᴇ ɪɴ, Berlinrobot/utils/,Berlinrobot, and Berlinrobot/modules/
 ```
