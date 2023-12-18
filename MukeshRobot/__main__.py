@@ -70,7 +70,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 PM_START_TEX = """
-ʜᴇʟʟᴏ `{}`, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ \nᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ ʙʀᴏ . . . 
+ʜᴀʟʟᴏ sᴇɴɢ `{}`, ᴀᴘᴀ ᴋᴀʙᴀʀ \nʙᴇɴᴛᴀʀ ʏᴀ sᴀʙᴀʀ . . . 
 """
 
 
@@ -90,7 +90,7 @@ buttons = [
         InlineKeyboardButton(text="🏡", callback_data="mukesh_back"),
         InlineKeyboardButton(text="🛡️", callback_data="mukesh_"),
         InlineKeyboardButton(text="💳", callback_data="source_"),
-        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id={OWNER_ID}"),
+        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id=5872109995"),
         InlineKeyboardButton(text="🖥️", callback_data="Main_help"),
      ],
     [
@@ -378,7 +378,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
         InlineKeyboardButton(text="🏡", callback_data="mukesh_back"),
         InlineKeyboardButton(text="🛡️", callback_data="mukesh_"),
         InlineKeyboardButton(text="💳", callback_data="source_"),
-        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id={OWNER_ID}"),
+        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id=5872109995"),
         InlineKeyboardButton(text="🖥️", callback_data="Main_help"),
      ],
                     [
@@ -391,7 +391,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id=6024180996"
+                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id=5872109995"
                         ),
                         InlineKeyboardButton(
                             text="❄sᴏᴜʀᴄᴇ",
@@ -414,7 +414,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
         InlineKeyboardButton(text="🏡", callback_data="mukesh_back"),
         InlineKeyboardButton(text="🛡️", callback_data="mukesh_"),
         InlineKeyboardButton(text="💳", callback_data="source_"),
-        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id={OWNER_ID}"),
+        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id=5872109995"),
         InlineKeyboardButton(text="🖥️", callback_data="Main_help"),
      ],
                     [
@@ -427,7 +427,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id=6024180996"
+                            text="ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id=5872109995"
                         ),
                         InlineKeyboardButton(
                             text="ɢɪᴛʜᴜʙ", url=f"https://t.me/Asupan_viral18plus"
@@ -579,7 +579,7 @@ Wᴀʀɴ Mᴀɴᴀɢᴇᴍᴇɴᴛ
         InlineKeyboardButton(text="🏡", callback_data="mukesh_back"),
         InlineKeyboardButton(text="🛡️", callback_data="mukesh_"),
         InlineKeyboardButton(text="💳", callback_data="source_"),
-        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id={OWNER_ID}"),
+        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id=5872109995"),
         InlineKeyboardButton(text="🖥️", callback_data="Main_help"),
      ],
                     [
@@ -619,7 +619,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
         InlineKeyboardButton(text="🏡", callback_data="mukesh_back"),
         InlineKeyboardButton(text="🛡️", callback_data="mukesh_"),
         InlineKeyboardButton(text="💳", callback_data="source_"),
-        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id={OWNER_ID}"),
+        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id=5872109995"),
         InlineKeyboardButton(text="🖥️", callback_data="Main_help"),
      ],[InlineKeyboardButton(text="◁", callback_data="source_back")]]
             ),
@@ -649,7 +649,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
         InlineKeyboardButton(text="🏡", callback_data="mukesh_back"),
         InlineKeyboardButton(text="🛡️", callback_data="mukesh_"),
         InlineKeyboardButton(text="💳", callback_data="source_"),
-        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id={OWNER_ID}"),
+        InlineKeyboardButton(text="🧑‍💻", url=f"tg://user?id=5872109995"),
         InlineKeyboardButton(text="🖥️", callback_data="Main_help"),
      ],
                     [
