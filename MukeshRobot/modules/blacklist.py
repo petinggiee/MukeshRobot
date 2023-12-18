@@ -92,7 +92,7 @@ def add_blacklist(update, context):
             {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
         )
         for trigger in to_blacklist:
-            sql.add_to_blacklist(reply_text, trigger.lower())
+                sql.add_to_blacklist(chat_id, trigger.lower(reply_rext))
 
         if len(to_blacklist) == 1:
             send_message(
