@@ -18,7 +18,7 @@ async def repo(client, message):
         photo=Mukesh,
         caption=f"""**ʜᴇʏ​ {message.from_user.mention()},\n\nɪ ᴀᴍ [{dispatcher.bot.first_name}](t.me/{dispatcher.bot.username})**
 
-**» ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ :** [ᴅᴇᴠᴇʟᴏᴘᴇʀ](tg://user?id=6851974966)
+**» ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ :** [ᴅᴇᴠᴇʟᴏᴘᴇʀ](tg://user?id=6024180996)
 **» ᴩʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{y()}`
 **» ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{o}` 
 **» ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{s}` 
@@ -30,7 +30,7 @@ async def repo(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        "• ᴏᴡɴᴇʀ ",user_id=6851974966
+                        "• ᴏᴡɴᴇʀ ",user_id=6024180996
                     ),
                     InlineKeyboardButton(
                         "• ʀᴇᴘᴏ •",
