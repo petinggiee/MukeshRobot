@@ -22,12 +22,12 @@ class Config(object):
     # Get your API key from https://timezonedb.com/api
 
     # Optional fields
-    BL_CHATS = [6024180996]  # List of groups that you want blacklisted.
-    DRAGONS = [6024180996]  # User id of sudo users
+    BL_CHATS = []  # List of groups that you want blacklisted.
+    DRAGONS = []  # User id of sudo users
     DEV_USERS = [6024180996]  # User id of dev users
-    DEMONS = [6024180996]  # User id of support users
-    TIGERS = [6024180996]  # User id of tiger users
-    WOLVES = [6024180996]  # User id of whitelist users
+    DEMONS = []  # User id of support users
+    TIGERS = []  # User id of tiger users
+    WOLVES = []  # User id of whitelist users
 
     ALLOW_CHATS = True
     ALLOW_EXCL = True
