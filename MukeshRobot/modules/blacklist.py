@@ -81,7 +81,7 @@ def add_blacklist(update, context):
         chat_name = dispatcher.bot.getChat(conn).title
     else:
         chat_id = update.effective_chat.id
-        if chat.type == "𝗽𝗿𝗶𝘃𝗮𝘁𝗲":
+        if chat.type == "private":
             return
         else:
             chat_name = chat.title
@@ -89,25 +89,25 @@ def add_blacklist(update, context):
     if len(words) > 1:
         text = words[1]
         to_blacklist = list(
-            {trigger.strip() for trigger in reply_text.split("\n") if trigger.strip()}
+            {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
         )
         for trigger in to_blacklist:
-            sql.add_to_blacklist(reply_text, chat_id, trigger.lower())
+            sql.add_to_blacklist(chat_id, trigger.lower())
 
         if len(to_blacklist) == 1:
-            reply_text(
+            send_message(
                 update.effective_message,
-                "𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗴𝘄 𝘁𝗮𝗺𝗯𝗮𝗵𝗶𝗻 𝗺𝗲𝗸 <code>{}</code> 𝗸𝗲 𝗰𝗵𝗮𝘁: <b>{}</b>!".format(
-                    html.escape(to_blacklist[0]), html.escape(reply_text)
+                "ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ʙʟᴀᴄᴋʟɪsᴛ <code>{}</code> ᴅɪ ɢʀᴏᴜᴘs : <b>{}</b>!".format(
+                    html.escape(to_blacklist[0]), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
             )
 
         else:
-            reply_text(
+            send_message(
                 update.effective_message,
-                "Added blacklist trigger: <code>{}</code> in <b>{}</b>!".format(
-                    len(to_blacklist), html.escape(reply_text)
+                "ᴀᴅᴅᴇᴅ ʙʟᴀᴄᴋʟɪsᴛ ᴛʀɪɢɢᴇʀ: <code>{}</code> in <b>{}</b>!".format(
+                    len(to_blacklist), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
             )
@@ -115,7 +115,7 @@ def add_blacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "𝗸𝗮𝘀𝗶𝗵 𝗸𝗮𝘁𝗮 𝗸𝗮𝘁𝗮 𝗻𝘆𝗮 𝗱𝗼𝗻𝗴 𝗸𝗲𝗻𝘁𝗼𝗱 𝗺𝗮𝗻𝗮 𝘆𝗮𝗻𝗴 𝗺𝗮𝘂 𝗱𝗶𝘁𝗮𝗺𝗯𝗮𝗵 𝗸𝗲 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁.",
+            "ᴋᴀsɪʜ ᴋᴀᴛᴀ ᴋᴀᴛᴀ ɴʏᴀ ᴅᴏɴɢ ᴋᴇɴᴛᴏᴅ ᴍᴀɴᴀ ʏᴀɴɢ ᴍᴀᴜ ᴅɪ ʙʟᴀᴄᴋʟɪsᴛ"
 	)
  
 
@@ -191,7 +191,7 @@ def unblacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "𝗸𝗮𝘀𝗶𝗵 𝗸𝗮𝘁𝗮 𝗸𝗮𝘁𝗮 𝗻𝘆𝗮 𝗱𝗼𝗻𝗴 𝗸𝗲𝗻𝘁𝗼𝗱 𝗺𝗮𝗻𝗮 𝘆𝗮𝗻𝗴 𝗺𝗮𝘂 𝗱𝗶𝗵𝗮𝗽𝘂𝘀 𝗱𝗮𝗿𝗶 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁!",
+            "ᴋᴀsɪʜ ᴋᴀᴛᴀ ᴋᴀᴛᴀ ɴʏᴀ ᴅᴏɴɢ ᴋᴇɴᴛᴏᴅ ᴍᴀɴᴀ ʏᴀɴɢ ᴍᴀᴜ ᴅɪ ʜᴀᴘᴜs ʙʟᴀᴄᴋʟɪsᴛ!",
         )
 
 
