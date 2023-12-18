@@ -87,7 +87,7 @@ def add_blacklist(update, context):
             chat_name = chat.title
 
     if len(words) > 1:
-        text = words[1]
+        reply_text = words[1]
         to_blacklist = list(
             {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
         )
@@ -95,7 +95,7 @@ def add_blacklist(update, context):
             sql.add_to_blacklist(chat_id, trigger.lower())
 
         if len(to_blacklist) == 1:
-            send_message(
+            reply_text(
                 update.effective_message,
                 "𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗴𝘄 𝘁𝗮𝗺𝗯𝗮𝗵𝗶𝗻 𝗺𝗲𝗸 <code>{}</code> 𝗸𝗲 𝗰𝗵𝗮𝘁: <b>{}</b>!".format(
                     html.escape(to_blacklist[0]), html.escape(chat_name)
