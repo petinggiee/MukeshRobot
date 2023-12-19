@@ -1068,7 +1068,7 @@ def main():
         try:
             dispatcher.bot.send_photo(
                 f"@berlinmusic_support",
-                photo=f"https://graph.org/file/822c62595ccfde4acdc83.jpg",
+                photo=f"https://graph.org/file/8e2dbd3ed3e3fc7277b55.jpg",
                 caption=f"""
 ✨ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.
 ━━━━━━━━━━━━━
