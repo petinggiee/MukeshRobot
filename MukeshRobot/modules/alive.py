@@ -10,17 +10,17 @@ from telethon import __version__ as tver
 from MukeshRobot import SUPPORT_CHAT, pbot,BOT_USERNAME, OWNER_ID,BOT_NAME,START_IMG
 
 PHOTO = [
-    "https://graph.org/file/d461e2a231919a9504572.jpg",
-    "https://graph.org/file/d461e2a231919a9504572.jpg",
-    "https://graph.org/file/d461e2a231919a9504572.jpg",
-    "https://graph.org/file/d461e2a231919a9504572.jpg",
-    "https://graph.org/file/d461e2a231919a9504572.jpg",
+    "https://graph.org/file/8e2dbd3ed3e3fc7277b55.jpg",
+    "https://graph.org/file/8e2dbd3ed3e3fc7277b55.jpg",
+    "https://graph.org/file/8e2dbd3ed3e3fc7277b55.jpg",
+    "https://graph.org/file/8e2dbd3ed3e3fc7277b55.jpg",
+    "https://graph.org/file/8e2dbd3ed3e3fc7277b55.jpg",
 ]
 
 Mukesh = [
     [
         InlineKeyboardButton(text="๏ ᴅᴇᴠ ๏", user_id=5872109995),
-        InlineKeyboardButton(text="๏ ꜱᴜᴘᴘᴏʀᴛ ๏", url=f"https://t.me/Asupan_viral18plus"),
+        InlineKeyboardButton(text="๏ ꜱᴜᴘᴘᴏʀᴛ ๏", url=f"https://t.me/Berlinmusic_support"),
     ],
     [
         InlineKeyboardButton(text="๏ ғᴏᴜɴᴅᴇʀ ๏", url="https://t.me/+50pybD6yWmE5Y2Fl"),
