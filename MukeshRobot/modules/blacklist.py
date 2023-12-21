@@ -70,7 +70,7 @@ def blacklist(update, context):
 @user_admin
 @typing_action
 def add_blacklist(Update, context):
-    msg = update.message.reply_to_message
+    msg = message.reply_to_message
     chat = update.effective_chat
     user = update.effective_user
     words = msg.text.split(None, 1)
