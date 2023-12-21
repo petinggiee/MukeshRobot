@@ -69,65 +69,54 @@ def blacklist(update, context):
 
 @user_admin
 @typing_action
-def add_blacklist(Update, context):
-    msg = reply_to_message
+def add_blacklist(update, context):
+    msg = update.effective_message
     chat = update.effective_chat
     user = update.effective_user
     words = msg.text.split(None, 1)
 
-    if conn := connected(context.bot, update, chat, user.id):
+    conn = connected(context.bot, update, chat, user.id)
+    if conn:
         chat_id = conn
         chat_name = dispatcher.bot.getChat(conn).title
     else:
         chat_id = update.effective_chat.id
         if chat.type == "private":
             return
-        chat_name = chat.title
+        else:
+            chat_name = chat.title
 
-    try:
-        if len(words) > 1:
-            text = words[1]
-            to_blacklist = list(
-                {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
+    if len(words) > 1:
+        text = words[1]
+        to_blacklist = list(
+            {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
+        )
+        for trigger in to_blacklist:
+            sql.add_to_blacklist(chat_id, trigger.lower())
+
+        if len(to_blacklist) == 1:
+            send_message(
+                update.effective_message,
+                "ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ʙʟᴀᴄᴋʟɪsᴛ <code>{}</code> ᴅɪ ɢʀᴏᴜᴘs: <b>{}</b>!".format(
+                    html.escape(to_blacklist[0]), html.escape(chat_name)
+                ),
+                parse_mode=ParseMode.HTML,
             )
-
-            for trigger in to_blacklist:
-                sql.add_to_blacklist(chat_id, trigger.lower())
-
-            if len(to_blacklist) == 1:
-                send_message(
-                    reply_to_message,
-                    f"Added blacklist <code>{html.escape(to_blacklist[0])}</code> in chat: <b>{chat_name}</b>!",
-                    parse_mode=ParseMode.HTML,
-                )
-
-            else:
-                send_message(
-                    reply_to_message,
-                    f"Added blacklist trigger: <code>{len(to_blacklist)}</code> in <b>{chat_name}</b>!",
-                    parse_mode=ParseMode.HTML,
-                )
 
         else:
-            text = pesan.text
-            to_blacklist = list(
-                {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
+            send_message(
+                update.effective_message,
+                "ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ʙʟᴀᴄᴋʟɪsᴛ: <code>{}</code> in <b>{}</b>!".format(
+                    len(to_blacklist), html.escape(chat_name)
+                ),
+                parse_mode=ParseMode.HTML,
             )
 
-            for trigger in to_blacklist:
-                sql.add_to_blacklist(chat_id, trigger.lower())
-
-            if len(to_blacklist) == 1:
-                send_message(
-                    reply_to_message,
-                    f"Added blacklist <code>{html.escape(to_blacklist[0])}</code> in chat: <b>{chat_name}</b>!",
-                    parse_mode=ParseMode.HTML,
-                )
-    except:
-          send_message(
-              reply_to_message,
-              "Kasih gw kata anj lu bisa reply atau tambahin didepan nya"
-          ) 
+    else:
+        send_message(
+            update.effective_message,
+            "ᴋᴀsɪʜ ᴋᴀᴛᴀ ᴋᴀᴛᴀ ɴʏᴀ ᴅᴏɴɢ ᴋᴇɴᴛᴏᴅ ᴍᴀɴᴀ ʏᴀɴɢ ᴍᴀᴜ ᴅɪ ʙʟᴀᴄᴋʟɪsᴛ.",
+        ) 
 
 
 @user_admin
