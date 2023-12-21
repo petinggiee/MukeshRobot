@@ -70,11 +70,10 @@ def blacklist(update, context):
 @user_admin
 @typing_action
 def add_blacklist(Update, context):
-    msg = update.effective_message
+    msg = update.message.reply_to_message
     chat = update.effective_chat
     user = update.effective_user
     words = msg.text.split(None, 1)
-    pesan = update.message.reply_to_message
 
     if conn := connected(context.bot, update, chat, user.id):
         chat_id = conn
@@ -97,14 +96,14 @@ def add_blacklist(Update, context):
 
             if len(to_blacklist) == 1:
                 send_message(
-                    msg,
+                    update.message.reply_to_message
                     f"Added blacklist <code>{html.escape(to_blacklist[0])}</code> in chat: <b>{chat_name}</b>!",
                     parse_mode=ParseMode.HTML,
                 )
 
             else:
                 send_message(
-                    msg,
+                    update.message.reply_to_message
                     f"Added blacklist trigger: <code>{len(to_blacklist)}</code> in <b>{chat_name}</b>!",
                     parse_mode=ParseMode.HTML,
                 )
@@ -120,13 +119,13 @@ def add_blacklist(Update, context):
 
             if len(to_blacklist) == 1:
                 send_message(
-                    msg,
+                    update.message.reply_to_message
                     f"Added blacklist <code>{html.escape(to_blacklist[0])}</code> in chat: <b>{chat_name}</b>!",
                     parse_mode=ParseMode.HTML,
                 )
     except:
           send_message(
-              msg,
+              update.message.reply_to_message
               "Kasih gw kata anj lu bisa reply atau tambahin didepan nya"
           ) 
 
