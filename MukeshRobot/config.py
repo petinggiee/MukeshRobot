@@ -10,7 +10,7 @@ class Config(object):
     OWNER_ID = 6024180996 # If you dont know, run the bot and do /id in your private chat with it, also an integer
     
     SUPPORT_CHAT = "Berlinmusic_support"  # Your own group for support, do not add the @
-    START_IMG = "https://graph.org/file/234ae198419785bca498b.jpg"
+    START_IMG = "https://graph.org/file/b87a43a56db9f6e7e3835.jpg"
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
     MONGO_DB_URI= "mongodb+srv://kansya:1234@cluster0.pz6wrfk.mongodb.net/?retryWrites=true&w=majority"
     # RECOMMENDED
