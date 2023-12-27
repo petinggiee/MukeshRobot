@@ -18,7 +18,7 @@ from MukeshRobot import *
 from MukeshRobot import LOGGER
 from MukeshRobot.events import register
 
-BOT_ID = 
+BOT_ID = 6978623850
 CMD_HELP = "/ !"
 
 
