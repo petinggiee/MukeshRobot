@@ -7,12 +7,12 @@ class Config(object):
     API_ID = "" # integer value, dont use ""
     API_HASH = ""
     TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
-    OWNER_ID = 5872109995 # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    OWNER_ID = 6024180996 # If you dont know, run the bot and do /id in your private chat with it, also an integer
     
-    SUPPORT_CHAT = "Asupan_viral18plus"  # Your own group for support, do not add the @
-    START_IMG = ""
+    SUPPORT_CHAT = "Berlinmusic_support"  # Your own group for support, do not add the @
+    START_IMG = "https://graph.org/file/234ae198419785bca498b.jpg"
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
-    MONGO_DB_URI= "mongodb+srv://ownernt:1234@cluster0.bz1ijkm.mongodb.net/?retryWrites=true&w=majority"
+    MONGO_DB_URI= "mongodb+srv://kansya:1234@cluster0.pz6wrfk.mongodb.net/?retryWrites=true&w=majority"
     # RECOMMENDED
     DATABASE_URL = ""  # A sql database url from elephantsql.com
     CASH_API_KEY = (
@@ -24,7 +24,7 @@ class Config(object):
     # Optional fields
     BL_CHATS = []  # List of groups that you want blacklisted.
     DRAGONS = []  # User id of sudo users
-    DEV_USERS = [5872109995]  # User id of dev users
+    DEV_USERS = [6024180996]  # User id of dev users
     DEMONS = []  # User id of support users
     TIGERS = []  # User id of tiger users
     WOLVES = []  # User id of whitelist users
